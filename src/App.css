@@ -1,38 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
+  height: 100vh;
+  background-color: #eee;
+}
+.App h1 {
+  color: salmon;
+  opacity: 0.5;
+}
+
+.todos {
+  width: 40%;
+  margin: 0 auto;
+  box-shadow: #aaa 0 0 20px;
+}
+.todos input {
+  outline: 0;
+}
+.todos .btn-arrow:hover {
+  color: #333 !important;
+}
+.todos ul {
+  list-style-type: none;
+}
+.todos ul span.active {
+  border: 1px solid grey;
+  border-radius: 50%;
+  padding: 0 4px;
+  margin-right: 8px;
+  cursor: pointer;
+  color: transparent;
+}
+.todos ul span.completed {
+  border: 1px solid grey;
+  border-radius: 50%;
+  padding: 0 4px;
+  margin-right: 8px;
+  cursor: pointer;
+  color: green;
+}
+.todos ul span.completedItem {
+  color: #bbb;
+  text-decoration: line-through;
+}
+.todos ul li button {
+  color: transparent;
+}
+.todos ul li button:hover {
+  color: hsl(0deg, 100%, 50%) !important;
+}
+.todos ul li:hover button {
+  color: hsl(0deg, 100%, 30%);
+  opacity: 0.5;
+}
+
+.btn-menu {
+  background-color: transparent;
+  border: solid 1px transparent;
+  border-radius: 4px;
+  margin-right: 5px;
+  color: grey;
+}
+.btn-menu:hover {
+  border: solid 1px #aaaaaa;
+}
+
+.focusBtn {
+  border: solid 1px #aaaaaa;
+}
+
+.clear-btn {
+  cursor: pointer;
+  color: grey;
+}
+.clear-btn:hover {
+  text-decoration: underline;
+}
+
+.tooltip-text {
+  display: inline-block;
+  color: transparent;
+  background-color: transparent;
+  width: max-content;
+  padding: 5px 3px;
+  font-size: 0.8em;
+  border-radius: 5px;
+  margin-left: 10px;
   text-align: center;
+  transition: 0.6s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.text-todo:hover .tooltip-text {
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.hide-input {
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.show-input {
+  display: block;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
 }
+
+/*# sourceMappingURL=App.css.map */
