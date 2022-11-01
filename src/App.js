@@ -14,10 +14,10 @@ function App() {
     useEffect(() => {
         const todos = localStorage.getItem("dd");
         if(todos){
-            dispatch({type: "todos/loadTodos", payload: todos})
+            dispatch({type: "todos/loadTodos", payload: JSON.parse(todos)})
         }
         return () => {
-            localStorage.setItem("dd", storeContents);
+            localStorage.setItem("dd", JSON.stringify(storeContents));
         }
         // eslint-disable-next-line
     },[])
