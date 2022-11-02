@@ -6,7 +6,7 @@ import {TodoList, FooterMenu} from ".";
 export const Todos = () => {
     const [newTodo, setNewTodo] = useState("");
     const [showedList, setShowedList] = useState("all");
-    const [todosList, setTodos] = useState();
+    const [todosList, setTodos] = useState([]);
     const dispatch = useDispatch();
     const allTodos = useSelector(state => state.todo);
     const numberOfActives = allTodos.filter(item => item.completed === false).length;
@@ -17,10 +17,15 @@ export const Todos = () => {
     },[allTodos])
 
     const addTodo = (e) => {
-        if(e.key === "Enter"){
-            e.target.value = "";
-            let date = new Date().toLocaleString();
-            dispatch({type: "todos/addToTodos", payload: {id: Math.random(), date: date, text: newTodo, completed: false}})
+        if(e.key === "Enter" || e.detail === 1){
+            if(newTodo === ""){
+                alert("Please add some todos");
+            }
+            else {
+                let date = new Date().toLocaleString();
+                dispatch({type: "todos/addToTodos", payload: {id: Math.random(), date: date, text: newTodo, completed: false}})
+                setNewTodo("");
+            }
         }
     }
     const selectAllItems = () => {
@@ -47,13 +52,14 @@ export const Todos = () => {
     return(
         <div className="border bg-white todos">
             <div className="d-flex">
-                <button onClick={selectAllItems} className="bg-white border-0 px-2 text-secondary btn-arrow"><span>&#x2B9F;</span></button>
-                <input onChange={(e) => setNewTodo(e.target.value)} type="text" autoFocus
-                       placeholder="What needs to be done?" className="flex-grow-1 py-4 border-0" onKeyUp={addTodo} />
+                <button onClick={selectAllItems} title="select all items" className="bg-white border-0 px-2 text-secondary btn-arrow"><span>&#x2B9F;</span></button>
+                <input onChange={(e) => setNewTodo(e.target.value)} type="text" value={newTodo} autoFocus
+                       placeholder="What needs to be done? Press Enter or Add" className="flex-grow-1 py-4 border-0" onKeyUp={addTodo} />
+                <button className="bg-success border-0 text-white rounded my-3 me-2 px-3" onClick={addTodo}>Add</button>
             </div>
             {allTodos.length > 0 &&
                 <>
-                    <TodoList list={todosList} showedList={showedList} />
+                    <TodoList list={todosList || allTodos} showedList={showedList} />
                     <hr />
                     <FooterMenu number={numberOfActives} changeList={changeTodosList} list={showedList} />
                 </>

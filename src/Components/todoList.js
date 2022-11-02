@@ -23,10 +23,10 @@ export const TodoList = ({list, showedList}) => {
         }
     }
 
-    useEffect(() => {
+    useEffect(() => { // for setting focus and placing of indicator, when the input will be showed
         if(editTodo.edit){
             const inputs = document.getElementsByClassName("input");
-            const input =inputs[editTodo.index];
+            const input = inputs[editTodo.index];
             const end = input.value.length;
             input.setSelectionRange(end, end); /*these two lines code for place indicator in front of value, always*/
             input.focus();
@@ -43,7 +43,7 @@ export const TodoList = ({list, showedList}) => {
                         <span className="text-todo">
                             <span className={todo.completed ? "completed" : "active"} onClick={showedList === "all" ?
                                 () => changeStatus(todo.id) : () => removeItem(todo.id)}>&#10003;</span>
-                            <span className={todo.completed && "completedItem"} onClick={(e) =>
+                            <span className={todo.completed ? "completedItem" : ""} onClick={(e) =>
                                 startEdit(e, index)}>{todo.text}<span className="tooltip-text">{todo.date}</span></span>
                         </span>
                         <button onClick={() => removeItem(todo.id)} className="bg-transparent border-0 fw-bold me-2">&#128473;</button>
