@@ -1,6 +1,8 @@
 import {useEffect, useState} from "react";
 import {useDispatch} from "react-redux";
 
+import {EmptyList} from "./emptyList";
+
 export const TodoList = ({list, showedList}) => {
     const dispatch = useDispatch();
     const [editTodo, setEditTodo] = useState({edit: false, index: 0});
@@ -34,6 +36,7 @@ export const TodoList = ({list, showedList}) => {
     }, [editTodo])
 
     return(
+        list.length === 0 && showedList !== "all" ? <EmptyList showedList={showedList} /> :
         <ul className="m-0 px-1">
             {list.map((todo, index) => {
                 return (

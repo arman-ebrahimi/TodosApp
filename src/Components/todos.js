@@ -27,6 +27,9 @@ export const Todos = () => {
                 setNewTodo("");
             }
         }
+        if(showedList !== "all"){
+            setShowedList("all");
+        }
     }
     const selectAllItems = () => {
         dispatch({type: "todos/selectAllItems", payload: ""})
@@ -59,7 +62,7 @@ export const Todos = () => {
             </div>
             {allTodos.length > 0 &&
                 <>
-                    <TodoList list={todosList || allTodos} showedList={showedList} />
+                    <TodoList list={todosList} showedList={showedList} />
                     <hr />
                     <FooterMenu number={numberOfActives} changeList={changeTodosList} list={showedList} />
                 </>

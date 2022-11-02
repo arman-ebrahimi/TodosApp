@@ -17,15 +17,14 @@ const todoSlice = createSlice({
             const id = state.findIndex(item => item.id === action.payload.id);
             state.splice(id, 1); //remove an item in specified position
         },
-        removeAllCompleted(state, action) {
-            const newArray = state.filter(item => item.completed === false);
-            return newArray;
+        removeAllCompleted(state) {
+            return state.filter(item => item.completed === false);
         },
         changeStatus(state, action) {
             const id = state.findIndex(item => item.id === action.payload.id);
             state[id].completed = !state[id].completed;
         },
-        selectAllItems(state, action) {
+        selectAllItems(state) {
             let uncompletedItem = state.some(item => item.completed === false);
             if(!uncompletedItem){
                 for(let i=0; i < state.length; i++){
