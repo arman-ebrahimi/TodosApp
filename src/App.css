@@ -18,6 +18,7 @@
 }
 .todos input {
   outline: 0;
+  font-size: 0.9em;
 }
 .todos .btn-arrow:hover span {
   color: #333 !important;
@@ -112,9 +113,6 @@
 }
 
 @media screen and (max-width: 1100px) {
-  .todos input {
-    font-size: 0.95em;
-  }
   .btn-menu, .clear-btn, .count-left {
     font-size: 0.95em;
   }
@@ -124,7 +122,7 @@
     width: 55%;
   }
   .todos input {
-    font-size: 0.9em;
+    font-size: 0.85em;
   }
   .btn-menu, .clear-btn, .count-left {
     font-size: 0.9em;
@@ -142,6 +140,9 @@
   .todos {
     width: 80%;
   }
+  .todos input {
+    font-size: 0.8em;
+  }
   .btn-menu, .clear-btn {
     font-size: 0.8em;
   }
@@ -149,6 +150,9 @@
 @media screen and (max-width: 488px) {
   .todos {
     width: 90%;
+  }
+  .todos input {
+    font-size: 0.7em;
   }
   .todos .add-btn {
     padding: 0 7px;
