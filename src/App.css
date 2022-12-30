@@ -153,6 +153,10 @@
   .todos .add-btn {
     padding: 0 7px;
   }
+  .btn-menu {
+    font-size: 0.7em;
+    margin-right: 0;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */
