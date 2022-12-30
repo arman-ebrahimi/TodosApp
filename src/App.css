@@ -19,7 +19,7 @@
 .todos input {
   outline: 0;
 }
-.todos .btn-arrow:hover {
+.todos .btn-arrow:hover span {
   color: #333 !important;
 }
 .todos ul {
@@ -60,7 +60,7 @@
   background-color: transparent;
   border: solid 1px transparent;
   border-radius: 4px;
-  margin-right: 5px;
+  margin-right: 3px;
   color: grey;
 }
 .btn-menu:hover {
@@ -106,6 +106,47 @@
   width: 100%;
   position: absolute;
   z-index: 1;
+}
+
+@media screen and (max-width: 1100px) {
+  .todos input {
+    font-size: 0.95em;
+  }
+  .btn-menu, .clear-btn, .count-left {
+    font-size: 0.95em;
+  }
+}
+@media screen and (max-width: 992px) {
+  .todos {
+    width: 55%;
+  }
+  .todos input {
+    font-size: 0.9em;
+  }
+  .btn-menu, .clear-btn, .count-left {
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 778px) {
+  .todos {
+    width: 70%;
+  }
+  .btn-menu, .clear-btn, .count-left {
+    font-size: 0.85em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .todos {
+    width: 80%;
+  }
+  .btn-menu, .clear-btn {
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 488px) {
+  .todos {
+    width: 90%;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */

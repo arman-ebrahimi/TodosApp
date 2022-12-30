@@ -8,7 +8,7 @@ export const FooterMenu = ({number, changeList, list}) => {
     }
     return(
         <div className="d-flex justify-content-between mx-2">
-            <p className="text-secondary">{number} items left</p>
+            <p className="text-secondary count-left">{number} items left</p>
             <div>
                 <button name="all" onClick={changeList} className={`${list === "all" && "focusBtn"} btn-menu`}>All</button>
                 <button name="active" onClick={changeList} className={`${list === "active" && "focusBtn"} btn-menu`}>Active</button>
