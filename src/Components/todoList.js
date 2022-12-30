@@ -44,7 +44,9 @@ export const TodoList = ({list, showedList}) => {
                         <input type="text" className={`${editTodo.edit && editTodo.index === index ? "show-input" : "hide-input"} input`}
                                defaultValue={todo.text} onKeyUp={(e) => applyEdit(e, index)} />
                         <span className="text-todo">
-                            {showedList === "all" ? <span className={todo.completed ? "completed" : "active"} onClick={() => changeStatus(todo.id)}>&#10003;</span> : showedList === "active" ? <span className="fa fa-spinner pe-2"></span> : <span className="fa fa-check pe-2 text-secondary"></span>}
+                            {showedList === "all" ? <span className={todo.completed ? "completed" : "active"} onClick={() => changeStatus(todo.id)}>&#10003;</span>
+                                : showedList === "active" ? <span className="fa fa-spinner pe-2"></span>
+                                    : <span className="fa fa-check pe-2 text-secondary"></span>}
                             <span className={todo.completed ? "completedItem" : ""} onClick={(e) =>
                                 startEdit(e, index)}>{todo.text}<span className="tooltip-text">{todo.date}</span></span>
                         </span>

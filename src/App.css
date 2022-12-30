@@ -4,11 +4,10 @@
 
 .App {
   height: 100vh;
-  background-color: #eee;
+  background-color: #444;
 }
 .App h1 {
   color: salmon;
-  opacity: 0.5;
 }
 
 .todos {

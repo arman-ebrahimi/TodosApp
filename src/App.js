@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="display-1 mb-5 text-center">todos</h1>
+      <h1 className="display-1 mb-3 text-center">todos</h1>
       <Todos />
     </div>
   );
