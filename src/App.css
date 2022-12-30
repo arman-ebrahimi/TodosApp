@@ -22,6 +22,9 @@
 .todos .btn-arrow:hover span {
   color: #333 !important;
 }
+.todos .add-btn {
+  padding: 0 15px;
+}
 .todos ul {
   list-style-type: none;
 }
@@ -146,6 +149,9 @@
 @media screen and (max-width: 488px) {
   .todos {
     width: 90%;
+  }
+  .todos .add-btn {
+    padding: 0 7px;
   }
 }
 

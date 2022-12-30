@@ -57,8 +57,8 @@ export const Todos = () => {
             <div className="d-flex">
                 <button onClick={selectAllItems} title="select all items" className="bg-white border-0 px-2 text-secondary btn-arrow"><span className="fa fa-chevron-down"></span></button>
                 <input onChange={(e) => setNewTodo(e.target.value)} type="text" value={newTodo} autoFocus
-                       placeholder="What needs to be done? Press Enter or Add" className="flex-grow-1 py-4 border-0" onKeyUp={addTodo} />
-                <button className="bg-success border-0 text-white rounded my-3 me-2 px-3" onClick={addTodo}>Add</button>
+                       placeholder="What should be done? Press Enter or Add" className="flex-grow-1 py-4 border-0" onKeyUp={addTodo} />
+                <button className="bg-success border-0 text-white rounded my-3 me-2 add-btn" onClick={addTodo}>Add</button>
             </div>
             {allTodos.length > 0 &&
                 <>
