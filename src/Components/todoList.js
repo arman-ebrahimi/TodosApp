@@ -40,16 +40,15 @@ export const TodoList = ({list, showedList}) => {
         <ul className="m-0 px-1">
             {list.map((todo, index) => {
                 return (
-                    <li className="py-2 d-flex justify-content-between position-relative" key={index}>
+                    <li className={`py-2 d-flex justify-content-between position-relative ${showedList !== "all" ? "act-com-todo" : ""}`} key={index}>
                         <input type="text" className={`${editTodo.edit && editTodo.index === index ? "show-input" : "hide-input"} input`}
                                defaultValue={todo.text} onKeyUp={(e) => applyEdit(e, index)} />
                         <span className="text-todo">
-                            <span className={todo.completed ? "completed" : "active"} onClick={showedList === "all" ?
-                                () => changeStatus(todo.id) : () => removeItem(todo.id)}>&#10003;</span>
+                            {showedList === "all" ? <span className={todo.completed ? "completed" : "active"} onClick={() => changeStatus(todo.id)}>&#10003;</span> : showedList === "active" ? <span className="fa fa-spinner pe-2"></span> : <span className="fa fa-check pe-2 text-secondary"></span>}
                             <span className={todo.completed ? "completedItem" : ""} onClick={(e) =>
                                 startEdit(e, index)}>{todo.text}<span className="tooltip-text">{todo.date}</span></span>
                         </span>
-                        <button onClick={() => removeItem(todo.id)} className="bg-transparent border-0 fw-bold me-2">&#128473;</button>
+                        <button onClick={() => removeItem(todo.id)} className="bg-transparent fa fa-trash border-0 fw-bold me-2"></button>
                     </li>
                 )
             })}

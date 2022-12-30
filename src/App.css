@@ -49,15 +49,11 @@
   color: #bbb;
   text-decoration: line-through;
 }
-.todos ul li button {
-  color: transparent;
-}
 .todos ul li button:hover {
-  color: hsl(0deg, 100%, 50%) !important;
+  color: hsl(0deg, 100%, 50%);
 }
-.todos ul li:hover button {
-  color: hsl(0deg, 100%, 30%);
-  opacity: 0.5;
+.todos ul .act-com-todo:hover button {
+  color: hsl(0deg, 100%, 50%);
 }
 
 .btn-menu {
