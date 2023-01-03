@@ -1,19 +1,20 @@
 {
   "short_name": "Todos App",
   "name": "Todos App written by react and redux",
+  "description": "This app made with react and redux",
   "icons": [
     {
-      "src": "135043.png",
+      "src": "123.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "135043.png",
+      "src": "123.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "135043.png",
+      "src": "123.png",
       "type": "image/png",
       "sizes": "512x512"
     }
